@@ -1,0 +1,20 @@
+{
+  "name": "eris-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rey",
+  "license": "MIT",
+  "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "eris": "^0.15.1",
+    "eris-lavalink": "^1.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

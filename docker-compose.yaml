@@ -1,0 +1,25 @@
+version: "3"
+
+networks:
+    default:
+
+services:
+    lavalink:
+        image: fredboat/lavalink:master
+        container_name: lavalink
+        volumes:
+            - ./lavalink/application.yaml:/opt/Lavalink/application.yaml
+        networks:
+            - default
+
+    bot:
+        image: reynadi17/radiobot
+        container_name: bot
+        env_file:
+            - bot.env
+        networks:
+            - default
+        depends_on:
+            - lavalink
+        links:
+            - lavalink
