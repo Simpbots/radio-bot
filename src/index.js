@@ -31,6 +31,10 @@ client.on("ready", async() => {
 
     const player = await client.joinVoiceChannel(process.env['CHANNEL_ID'], {})
     player.play(data.tracks[0].track)
+
+    player.on("stuck", () => {
+        player.play(data.tracks[0].track)
+    })
 })
 
 client.connect()
